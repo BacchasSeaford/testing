@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Status
+comment0.text=\ Abstract\ base\ class\ for\ representation\ of\ various\ status\ codes\ returned\r\n\ \ by\ bank\ for\ a\ transaction.\ \ The\ bank\ will\ create\ appropriate\ subclasses.\r\n
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment1.text=\ Create\ a\ printable\ string\ representing\ this\ status\r\n\r\n\ \ @return\ string\ representation\r\n
+comment2.params=
+comment2.target=boolean\ isSuccess()
+comment2.text=\ See\ if\ this\ status\ represents\ success\r\n\r\n\ \ @return\ true\ if\ this\ status\ represents\ success\r\n
+comment3.params=
+comment3.target=boolean\ isInvalidPIN()
+comment3.text=\ See\ if\ this\ status\ represents\ an\ invalid\ PIN\r\n\r\n\ \ @return\ true\ if\ this\ status\ represents\ an\ invalid\ PIN\r\n
+comment4.params=
+comment4.target=java.lang.String\ getMessage()
+comment4.text=\ Accessor\ for\ message\ describing\ this\ status\ (used\ if\ status\ is\r\n\ \ not\ success)\r\n\r\n\ \ @return\ description\ of\ the\ problem\r\n
+numComments=5

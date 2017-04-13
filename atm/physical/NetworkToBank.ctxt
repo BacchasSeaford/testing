@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=NetworkToBank
+comment0.text=\ Manager\ for\ the\ ATM's\ network\ connection.\ \ In\ a\ real\ ATM,\ this\ would\ \r\n\ \ manage\ a\ physical\ device;\ in\ this\ simulation,\ \ it\ uses\ classes\ \r\n\ \ in\ package\ simulation\ to\ simulate\ the\ device.\r\n
+comment1.params=log\ bankAddress
+comment1.target=NetworkToBank(Log,\ java.net.InetAddress)
+comment1.text=\ Constructor\r\n\r\n\ \ @param\ log\ the\ log\ in\ which\ to\ record\ sending\ of\ messages\ and\ responses\r\n\ \ @param\ bankAddress\ the\ network\ address\ of\ the\ bank\r\n
+comment2.params=
+comment2.target=void\ openConnection()
+comment2.text=\ Open\ connection\ to\ bank\ at\ system\ startup\r\n
+comment3.params=
+comment3.target=void\ closeConnection()
+comment3.text=\ Close\ connection\ to\ bank\ at\ system\ shutdown\r\n
+comment4.params=message\ balances
+comment4.target=banking.Status\ sendMessage(banking.Message,\ banking.Balances)
+comment4.text=\ Send\ a\ message\ to\ bank\r\n\r\n\ \ @param\ message\ the\ message\ to\ send\r\n\ \ @param\ balances\ (out)\ balances\ in\ customer's\ account\ as\ reported\r\n\ \ \ \ \ \ \ \ \ by\ bank\r\n\ \ @return\ status\ code\ returned\ by\ bank\r\n
+numComments=5

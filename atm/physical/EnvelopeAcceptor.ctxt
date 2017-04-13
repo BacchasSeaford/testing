@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=EnvelopeAcceptor
+comment0.text=\ Manager\ for\ the\ ATM's\ envelope\ acceptor.\ \ In\ a\ real\ ATM,\ this\ would\ \r\n\ \ manage\ a\ physical\ device;\ in\ this\ simulation,\ \ it\ uses\ classes\ \r\n\ \ in\ package\ simulation\ to\ simulate\ the\ device.\r\n
+comment1.params=log
+comment1.target=EnvelopeAcceptor(Log)
+comment1.text=\ Constructor\r\n\r\n\ \ @param\ log\ the\ log\ in\ which\ to\ record\ receiving\ an\ envelope\r\n
+comment2.params=
+comment2.target=void\ acceptEnvelope()
+comment2.text=\ Accept\ an\ envelope\ from\ customer.\r\n\r\n\ \ @exception\ CustomerConsole.Cancelled\ if\ operation\ timed\ out\ or\ the\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ customer\ cancelled\ it\r\n
+numComments=3

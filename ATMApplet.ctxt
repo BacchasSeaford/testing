@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=ATMApplet
+comment0.text=\ Applet\ class\ for\ the\ applet\ version\ of\ the\ ATM\ simulation.\r\n\ \ Create\ an\ instance\ of\ the\ ATM,\ display\ in\ the\ applet,\ and\ then\ let\ the\ GUI\r\n\ \ do\ the\ work.\r\n
+comment1.params=
+comment1.target=void\ init()
+numComments=2

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Receipt
+comment0.text=\ Abstract\ base\ class\ for\ representation\ of\ a\ receipt\ to\ be\ printed.\ \ Each\r\n\ \ specific\ type\ of\ transaction\ creates\ an\ instance\ of\ a\ concrete\ subclass\r\n\ \ of\ this\ class.\ \ \r\n
+comment1.params=atm\ card\ transaction\ balances
+comment1.target=Receipt(atm.ATM,\ Card,\ atm.transaction.Transaction,\ Balances)
+comment1.text=\ Constructor.\ \ This\ base\ class\ constructor\ will\ create\ the\ portions\ of\ the\r\n\ \ receipt\ that\ are\ common\ to\ all\ types\ of\ transaction,\ and\ the\ subclass\r\n\ \ constructor\ will\ create\ the\ details\ portion\ unique\ to\ each\ type.\r\n\r\n\ \ @param\ atm\ the\ ATM\ where\ the\ transaction\ was\ done\r\n\ \ @param\ card\ the\ card\ that\ was\ used\r\n\ \ @param\ transaction\ the\ Transaction\ object\ for\ the\ transaction\r\n\ \ @param\ balances\ Balances\ object\ giving\ final\ balances\ for\ account\ used\r\n
+comment2.params=
+comment2.target=java.util.Enumeration\ getLines()
+comment2.text=\ Get\ the\ individual\ lines\ to\ be\ printed.\ \ Each\ call\ to\ the\ nextElement()\r\n\ \ of\ the\ enumeration\ gets\ one\ line\ (as\ a\ String)\r\n
+comment3.params=
+comment3.target=boolean\ hasMoreElements()
+comment4.params=
+comment4.target=java.lang.Object\ nextElement()
+numComments=5

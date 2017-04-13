@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=CashDispenser
+comment0.text=\ Manager\ for\ the\ ATM's\ cash\ dispenser.\ \ In\ a\ real\ ATM,\ this\ would\ \r\n\ \ manage\ a\ physical\ device;\ in\ this\ simulation,\ \ it\ uses\ classes\ \r\n\ \ in\ package\ simulation\ to\ simulate\ the\ device.\r\n
+comment1.params=log
+comment1.target=CashDispenser(Log)
+comment1.text=\ Constructor\r\n\r\n\ \ @param\ log\ the\ log\ in\ which\ to\ record\ dispensing\ cash\r\n
+comment2.params=initialCash
+comment2.target=void\ setInitialCash(banking.Money)
+comment2.text=\ Set\ the\ amount\ of\ cash\ initially\ on\ hand\ \r\n\r\n\ \ @param\ initialCash\ the\ amount\ of\ money\ in\ the\ dispenser\r\n
+comment3.params=amount
+comment3.target=boolean\ checkCashOnHand(banking.Money)
+comment3.text=\ See\ if\ there\ is\ enough\ cash\ on\ hand\ to\ satisfy\ a\ request\r\n\r\n\ \ @param\ amount\ the\ amount\ of\ cash\ the\ customer\ wants\r\n\ \ @return\ true\ if\ at\ least\ this\ amount\ of\ money\ is\ available\r\n
+comment4.params=amount
+comment4.target=void\ dispenseCash(banking.Money)
+comment4.text=\ Dispense\ cash\ to\ a\ customer\r\n\r\n\ \ @param\ amount\ the\ amount\ of\ cash\ to\ dispense\r\n\r\n\ \ Precondition\:\ amount\ is\ <\=\ cash\ on\ hand\r\n
+numComments=5

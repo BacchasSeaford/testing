@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Session
+comment0.text=Representation\ for\ one\ ATM\ session\ serving\ a\ single\ customer.
+comment1.params=atm
+comment1.target=Session(ATM)
+comment1.text=\ Constructor\r\n\r\n\ \ @param\ atm\ the\ ATM\ on\ which\ the\ session\ is\ performed\r\n
+comment2.params=
+comment2.target=void\ performSession()
+comment2.text=\ Perform\ the\ Session\ Use\ Case\r\n
+comment3.params=pin
+comment3.target=void\ setPIN(int)
+comment3.text=\ Change\ the\ pin\ recorded\ for\ the\ customer\ (if\ invalid\ pin\ extension\r\n\ \ was\ performed\ by\ a\ transaction\r\n\r\n\ \ @param\ pin\ the\ newly\ entered\ pin\r\n
+comment4.params=phoneNum
+comment4.target=void\ setPhonenum(int)
+numComments=5

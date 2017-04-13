@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=SimReceiptPrinter
+comment0.text=\ Simulate\ the\ receipt\ printer\r\n
+comment1.params=
+comment1.target=SimReceiptPrinter()
+comment1.text=\ Constructor\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=text
+comment3.target=void\ println(java.lang.String)
+comment3.text=\ Print\ line\ to\ receipt\r\n\r\n\ \ @param\ text\ the\ line\ to\ print\r\n
+numComments=4

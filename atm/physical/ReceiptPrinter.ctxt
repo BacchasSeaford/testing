@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ReceiptPrinter
+comment0.text=\ Manager\ for\ the\ ATM's\ receipt\ printer.\ \ In\ a\ real\ ATM,\ this\ would\ \r\n\ \ manage\ a\ physical\ device;\ in\ this\ simulation,\ \ it\ uses\ classes\ \r\n\ \ in\ package\ simulation\ to\ simulate\ the\ device.\r\n
+comment1.params=
+comment1.target=ReceiptPrinter()
+comment1.text=\ Constructor\r\n
+comment2.params=receipt
+comment2.target=void\ printReceipt(banking.Receipt)
+comment2.text=\ Print\ a\ receipt\r\n\r\n\ \ @param\ receipt\ object\ containing\ the\ information\ to\ be\ printed\r\n
+numComments=3

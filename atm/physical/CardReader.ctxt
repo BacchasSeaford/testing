@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=CardReader
+comment0.text=\ Manager\ for\ the\ ATM's\ card\ reader.\ \ In\ a\ real\ ATM,\ this\ would\ \r\n\ \ manage\ a\ physical\ device;\ in\ this\ simulation,\ it\ uses\ classes\ \r\n\ \ in\ package\ simulation\ to\ simulate\ the\ device.\ \ \r\n
+comment1.params=atm
+comment1.target=CardReader(atm.ATM)
+comment1.text=\ Constructor\r\n\r\n\ \ @param\ atm\ the\ ATM\ that\ owns\ this\ card\ reader\r\n
+comment2.params=
+comment2.target=banking.Card\ readCard()
+comment2.text=\ Read\ a\ card\ that\ has\ been\ partially\ inserted\ into\ the\ reader\r\n\r\n\ \ @return\ Card\ object\ representing\ information\ on\ the\ card\ if\ read\r\n\ \ \ \ \ \ \ \ \ \ successfully,\ null\ if\ not\ read\ successfully\r\n
+comment3.params=
+comment3.target=void\ ejectCard()
+comment3.text=\ Eject\ the\ card\ that\ is\ currently\ inside\ the\ reader.\ \ \r\n
+comment4.params=
+comment4.target=void\ retainCard()
+comment4.text=\ Retain\ the\ card\ that\ is\ currently\ inside\ the\ reader\ for\ action\ by\ the\r\n\ \ bank.\r\n
+numComments=5

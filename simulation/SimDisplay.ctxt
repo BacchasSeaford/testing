@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=SimDisplay
+comment0.text=\ Simulate\ the\ display\ portion\ of\ the\ customer\ console\r\n
+comment1.params=
+comment1.target=SimDisplay()
+comment1.text=\ Constructor\r\n
+comment2.params=
+comment2.target=void\ clearDisplay()
+comment2.text=\ Clear\ the\ display\r\n
+comment3.params=text
+comment3.target=void\ display(java.lang.String)
+comment3.text=\ Add\ text\ to\ the\ display\ -\ may\ contain\ one\ or\ more\ lines\ delimited\ by\ \\n\r\n\r\n\ \ @param\ text\ the\ text\ to\ display\r\n
+comment4.params=echo
+comment4.target=void\ setEcho(java.lang.String)
+comment4.text=\ Set\ echoed\ input\ on\ the\ display\r\n\r\n\ \ @param\ echo\ the\ line\ to\ be\ echoed\ -\ always\ the\ entire\ line\r\n
+comment5.params=
+comment5.target=java.awt.Insets\ getInsets()
+comment5.text=\ Override\ the\ getInsets()\ method\ to\ provide\ additional\ spacing\ all\r\n\ \ around\r\n
+numComments=6

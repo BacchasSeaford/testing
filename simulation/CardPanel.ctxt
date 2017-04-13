@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=CardPanel
+comment0.text=\ The\ GUI\ panel\ that\ simulates\ the\ reading\ of\ the\ ATM\ card's\ magnetic\ stripe\r\n\ \ by\ asking\ the\ user\ to\ enter\ the\ number\r\n
+comment1.params=
+comment1.target=CardPanel()
+comment1.text=\ Constructor\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=int\ readCardNumber()
+comment3.text=\ Ask\ the\ customer\ to\ enter\ the\ number\ on\ the\ card\r\n\r\n\ \ @return\ the\ number\ entered\r\n
+numComments=4

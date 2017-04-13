@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Log
+comment0.text=\ Manager\ for\ the\ ATM's\ internal\ log.\ \ In\ a\ real\ ATM,\ this\ would\ \r\n\ \ manage\ a\ physical\ device;\ in\ this\ simulation,\ \ it\ uses\ classes\ \r\n\ \ in\ package\ simulation\ to\ simulate\ the\ device.\r\n
+comment1.params=
+comment1.target=Log()
+comment1.text=\ Constructor\r\n
+comment2.params=message
+comment2.target=void\ logSend(banking.Message)
+comment2.text=\ Log\ the\ sending\ of\ a\ message\ to\ the\ bank\r\n\r\n\ \ @param\ message\ the\ message\ to\ be\ logged\r\n
+comment3.params=response
+comment3.target=void\ logResponse(banking.Status)
+comment3.text=\ Log\ a\ response\ received\ from\ a\ message\r\n\r\n\ \ @param\ status\ the\ status\ object\ returned\ by\ the\ bank\ in\ response\r\n
+comment4.params=amount
+comment4.target=void\ logCashDispensed(banking.Money)
+comment4.text=\ Log\ the\ dispensing\ of\ cash\ by\ the\ cash\ dispenser\r\n\r\n\ \ @param\ amount\ the\ amount\ of\ cash\ being\ dispensed\r\n
+comment5.params=
+comment5.target=void\ logEnvelopeAccepted()
+comment5.text=\ Log\ accepting\ an\ envelope.\ \ This\ method\ is\ only\ called\ if\ an\ envelope\r\n\ \ is\ actually\ received\ from\ the\ customer\r\n
+numComments=6

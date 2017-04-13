@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=AccountInformation
+comment0.text=\ The\ static\ members\ of\ this\ class\ incorporate\ information\ about\ accounts\r\n\ \ offered\ by\ the\ bank.\ \ Actual\ communication\ with\ the\ bank\ uses\ account\ type\r\n\ \ numbers\ -\ e.g.\ 0\ represents\ the\ first\ type\ of\ account\ listed.\ \r\n
+numComments=1

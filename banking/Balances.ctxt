@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Balances
+comment0.text=\ Representation\ for\ customer's\ current\ account\ balances\ as\ returned\ by\ the\ \r\n\ \ bank.\ \ An\ empty\ object\ of\ this\ class\ is\ created\ and\ sent\ along\ with\ the\r\n\ \ transaction\ message;\ the\ bank\ fills\ it\ in\ with\ values.\r\n
+comment1.params=
+comment1.target=Balances()
+comment1.text=\ Constructor.\ \ Create\ an\ object\ whose\ values\ will\ be\ filled\ in\ later,\ when\r\n\ \ returning\ a\ value\ to\ the\ creator.\r\n
+comment2.params=total\ available
+comment2.target=void\ setBalances(Money,\ Money)
+comment2.text=\ Mutator.\ \ Fill\ in\ values\r\n\r\n\ \ @param\ total\ the\ total\ balance\ in\ the\ account\r\n\ \ @param\ available\ the\ available\ balance\r\n
+comment3.params=
+comment3.target=Money\ getTotal()
+comment3.text=\ Accessor\ for\ total\ balance\r\n\r\n\ \ @return\ total\ balance\ in\ the\ account\r\n
+comment4.params=
+comment4.target=Money\ getAvailable()
+comment4.text=\ Accessor\ for\ available\ balance\r\n\r\n\ \ @return\ available\ balance\r\n
+numComments=5

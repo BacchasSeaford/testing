@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=SimOperatorPanel
+comment0.text=\ Simulate\ the\ operator\ panel\r\n
+comment1.params=simulation
+comment1.target=SimOperatorPanel(Simulation)
+comment1.text=\ Constructor\r\n\r\n\ \ @param\ simulation\ the\ overall\ simulation\ object\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=void\ run()
+numComments=4
