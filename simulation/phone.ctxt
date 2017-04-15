@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=phone
+comment0.text=\r\n\r\n\ @author\ Seaford\ Bacchas\ \r\n
+comment1.params=
+comment1.target=void\ CardPanel()
+comment2.params=
+comment2.target=int\ readCardNumber()
+comment2.text=\ Ask\ the\ customer\ to\ enter\ the\ number\ on\ the\ card\r\n\r\n\ \ @return\ the\ number\ entered\r\n
+numComments=3

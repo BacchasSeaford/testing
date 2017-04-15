@@ -9,9 +9,9 @@ import banking.Message;
 import banking.Money;
 import banking.Receipt;
 import simulation.*;
-import java.util.Scanner;
 import java.awt.*;
 import java.awt.event.*;
+
 /**
  * Mobile Topup credit
  *
@@ -30,19 +30,31 @@ public class Topup extends Transaction
     
     protected Message getSpecificsFromCustomer() throws CustomerConsole.Cancelled
     {
-        Simulation.getInstance().display("Please enter your Phone number\n");
-//        phoneNum1 = new TextField(10);
-//        phoneNum1.setText("");
-//        from = Integer.parseInt(phoneNum1.getText());
-        return new Message(Message.Topup, card, pin, serialNumber, from, 5, new Money(100));
+        from = atm.getCustomerConsole().readMenuChoice(
+            "Account to pay for credit",
+            AccountInformation.ACCOUNT_NAMES);
+
+        String [] amountOptions = { "1", "2", "5", "10", "15" };
+        Money [] amountValues = { 
+                                  new Money(135), new Money(235), new Money(535),
+                                  new Money(1035), new Money(1535)
+                                };
+        String amountMessage = "";
+        amount = amountValues [ 
+                atm.getCustomerConsole().readMenuChoice(
+                    amountMessage + "Enter number of credit \n credit cost equal number * 100 + 35", amountOptions) ];
+
+        
+      //  Simulation.getInstance().display("Please enter your Phone number\n");
+        return new Message(Message.Topup, card, pin, serialNumber, from, 5, amount);
+
     }
-  
         protected Receipt completeTransaction()
     {
         return new Receipt(this.atm, this.card, this, this.balances) {
             {
                 detailsPortion = new String[1];
-                detailsPortion[0] = "Topup to: " + 
+                detailsPortion[0] = "Topup paid for by: " + 
                                     AccountInformation.ACCOUNT_ABBREVIATIONS[from];
               
             }
