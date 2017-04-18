@@ -1,4 +1,4 @@
-/*
+    /*
  * ATM Example system - file SimKeyboard.java
  *
  * copyright (c) 2001 - Russell C. Bjork
@@ -202,7 +202,14 @@ class SimKeyboard extends Panel
                         input.substring(input.length() - 2));
                 break;
             }
-            
+            case phone:
+            {           
+                currentInput.append(digit);
+                String input = currentInput.toString();
+                if (input.length() > 0)
+                    setEcho(input);
+                break;
+            }
             case MENU_MODE:
             {
                 if (digit > 0 && digit <= maxValue)
@@ -228,6 +235,7 @@ class SimKeyboard extends Panel
                 break;
                 
             case PIN_MODE:
+            case phone:
             case AMOUNT_MODE:
             
                 if (currentInput.length() > 0)
@@ -264,6 +272,10 @@ class SimKeyboard extends Panel
                 currentInput.setLength(0);
                 setEcho("0.00");
                 break;
+            case phone:    
+                currentInput.setLength(0);
+                setEcho("(999)999-9999");
+                break;
                 
             case MENU_MODE:
             
@@ -292,6 +304,7 @@ class SimKeyboard extends Panel
                 
             case PIN_MODE:
             case AMOUNT_MODE:
+            case phone:
             case MENU_MODE:
             
                 cancelled = true;
@@ -339,7 +352,9 @@ class SimKeyboard extends Panel
      *  and return value immediately.
      */
     private static final int MENU_MODE = Simulation.MENU_MODE;
-    
+        /** Read phone number
+     */
+    private static final int phone = Simulation.phone;
     /** Current partial line of input
      */
     private StringBuffer currentInput;

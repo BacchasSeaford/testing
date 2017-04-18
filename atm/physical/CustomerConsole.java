@@ -93,7 +93,7 @@ public class CustomerConsole
         Simulation.getInstance().display(prompt);
         Simulation.getInstance().display("");
         
-        String input = Simulation.getInstance().readInput(2,0);
+        String input = Simulation.getInstance().readInput(Simulation.phone,999999999);
         
         Simulation.getInstance().clearDisplay();
         
@@ -142,5 +142,5 @@ public class CustomerConsole
             super("Cancelled by customer");
         }
     }
-    private int phoneNum; 
+    private double phoneNum; 
 }

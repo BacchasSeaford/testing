@@ -259,6 +259,8 @@ public class Simulation
      */
     public static final int MENU_MODE = 3;
     
+    public static final int phone = 4;
+    
     /** The ATM object for the ATM being simulated
      */
     private ATM atm;

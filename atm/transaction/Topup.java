@@ -40,9 +40,12 @@ public class Topup extends Transaction
                                   new Money(1035), new Money(1535)
                                 };
         String amountMessage = "";
+        String [] credit ={""};
         amount = amountValues [ 
                 atm.getCustomerConsole().readMenuChoice(
                     amountMessage + "Enter number of credit \n credit cost equal number * 100 + 35", amountOptions) ];
+        phoneNum = atm.getCustomerConsole().readPhonenum(
+                    "Please enter the phone number");
 
         
       //  Simulation.getInstance().display("Please enter your Phone number\n");
@@ -74,7 +77,5 @@ public class Topup extends Transaction
     private Money amount;
     /** Phone number
      */
-    private int phoneNum;
-    private TextField phoneNum1;
-    
+    private int phoneNum;  
 }
