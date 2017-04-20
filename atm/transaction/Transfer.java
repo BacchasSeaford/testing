@@ -50,7 +50,7 @@ public class Transfer extends Transaction
         amount = atm.getCustomerConsole().readAmount("Amount to transfer");
         
         return new Message(Message.TRANSFER, 
-                        card, pin, serialNumber, from, to, amount);
+                        card, pin, serialNumber, from, to, amount,0);
     }
     
     /** Complete an approved transaction

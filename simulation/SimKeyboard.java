@@ -140,7 +140,7 @@ class SimKeyboard extends Panel
      *  @param maxValue the maximum acceptable value (used in MENU_MODE only)
      *  @return the line that was entered - null if user pressed CANCEL.
      */
-    synchronized String readInput(int mode, int maxValue)
+    synchronized String readInput(int mode, long maxValue)
     {
         this.mode = mode;
         this.maxValue = maxValue;
@@ -274,7 +274,7 @@ class SimKeyboard extends Panel
                 break;
             case phone:    
                 currentInput.setLength(0);
-                setEcho("(999)999-9999");
+                setEcho("");
                 break;
                 
             case MENU_MODE:
@@ -365,7 +365,7 @@ class SimKeyboard extends Panel
     
     /** Maximum valid value - used in MENU_MODE only
      */
-    private int maxValue;
+    private long maxValue;
 }                               
     
     

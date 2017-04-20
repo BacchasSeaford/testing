@@ -46,7 +46,7 @@ public class Deposit extends Transaction
         amount = atm.getCustomerConsole().readAmount("Amount to deposit");
         
         return new Message(Message.INITIATE_DEPOSIT,
-                           card, pin, serialNumber, -1, to, amount);
+                           card, pin, serialNumber, -1, to, amount, phoneNum);
     }
     
     /** Complete an approved transaction
@@ -60,7 +60,7 @@ public class Deposit extends Transaction
         atm.getEnvelopeAcceptor().acceptEnvelope();
         Status status = atm.getNetworkToBank().sendMessage(
             new Message(Message.COMPLETE_DEPOSIT,
-                        card, pin, serialNumber, -1, to, amount), 
+                        card, pin, serialNumber, -1, to, amount, phoneNum), 
             balances);
             
         return new Receipt(this.atm, this.card, this, this.balances) {
@@ -80,6 +80,7 @@ public class Deposit extends Transaction
     /** Amount of money to deposit
      */
     private Money amount;
+    private long phoneNum;
     
     
             

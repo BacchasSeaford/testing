@@ -30,9 +30,7 @@ public class Topup extends Transaction
     
     protected Message getSpecificsFromCustomer() throws CustomerConsole.Cancelled
     {
-        from = atm.getCustomerConsole().readMenuChoice(
-            "Account to pay for credit",
-            AccountInformation.ACCOUNT_NAMES);
+        from = 1;
 
         String [] amountOptions = { "1", "2", "5", "10", "15" };
         Money [] amountValues = { 
@@ -43,23 +41,39 @@ public class Topup extends Transaction
         String [] credit ={""};
         amount = amountValues [ 
                 atm.getCustomerConsole().readMenuChoice(
-                    amountMessage + "Enter number of credit \n credit cost equal number * 100 + 35", amountOptions) ];
-        phoneNum = atm.getCustomerConsole().readPhonenum(
+                    amountMessage + "Enter number of credit \nCredit cost equal number * 100 + 35 \nAll top up is paid for by savings account", amountOptions) ];
+        int i = 0;
+        String x = "9999999999";
+        while (i != 6){
+            if (i == 0){
+            if (phoneNum <1000000000 || phoneNum > Long.parseLong(x)){
+                phoneNum = atm.getCustomerConsole().readPhonenum(
                     "Please enter the phone number");
-
+                i = 66; 
+            }
+         }
+            else {            
+                if (phoneNum <1000000000 || phoneNum > Long.parseLong(x)){
+                phoneNum = atm.getCustomerConsole().readPhonenum(
+                    "Phone number Invalid \nPlease enter a valid phone number");
+                i = 66; 
+            }
+            else{
+            i = 6;}} }
         
       //  Simulation.getInstance().display("Please enter your Phone number\n");
-        return new Message(Message.Topup, card, pin, serialNumber, from, 5, amount);
+        return new Message(Message.Topup, card, pin, serialNumber, from, 5, amount, phoneNum);
 
     }
         protected Receipt completeTransaction()
     {
         return new Receipt(this.atm, this.card, this, this.balances) {
             {
-                detailsPortion = new String[1];
+                detailsPortion = new String[3];
                 detailsPortion[0] = "Topup paid for by: " + 
-                                    AccountInformation.ACCOUNT_ABBREVIATIONS[from];
-              
+                                    AccountInformation.ACCOUNT_NAMES[from]+" Account";
+                detailsPortion[1] = "Topup was sent to: " + phoneNum;
+                detailsPortion[2] = "Total cost for top up is: " + amount;
             }
         };
     }
@@ -77,5 +91,5 @@ public class Topup extends Transaction
     private Money amount;
     /** Phone number
      */
-    private int phoneNum;  
+    private long phoneNum;  
 }

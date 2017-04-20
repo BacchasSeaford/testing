@@ -64,7 +64,7 @@ public class Withdrawal extends Transaction
                 amountMessage = "Insufficient cash available\n";
         }
         
-        return new Message(Message.WITHDRAWAL, card, pin, serialNumber, from, -1, amount);
+        return new Message(Message.WITHDRAWAL, card, pin, serialNumber, from, -1, amount, 0);
 
     }
     

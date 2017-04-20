@@ -30,7 +30,7 @@ public class Message
      *  @param amount the amount of the transaction - can be null if the particular
      *         type of transaction does not have an amount (e.g. an inquiry)
      */
-    public Message(int messageCode, Card card, int pin, int serialNumber, int fromAccount, int toAccount, Money amount)
+    public Message(int messageCode, Card card, int pin, int serialNumber, int fromAccount, int toAccount, Money amount, long phoneNum)
     {
         this.messageCode = messageCode;
         this.card = card;
@@ -39,6 +39,7 @@ public class Message
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
         this.amount = amount;
+        this.phoneNum = phoneNum;
     }
     
     /** Create a printable string representing this message
@@ -99,7 +100,7 @@ public class Message
         if (phoneNum >1000000000)
             result += " " + phoneNum;
         else
-            result += " NO phone number";
+            result += " ";
         
         return result;
     } 
@@ -181,7 +182,7 @@ public class Message
      *
      *  @return phone number
      */
-        public int getPhoneNum()
+        public long getPhoneNum()
     {
         return phoneNum;
     }
@@ -244,6 +245,6 @@ public class Message
      */
     private Money amount;
     
-    private int phoneNum;
+    private long phoneNum;
        
    }

@@ -135,7 +135,7 @@ public class Simulation
      *  @param maxValue the maximum acceptable value (used in MENU_MODE only)
      *  @return the line that was entered - null if user pressed CANCEL.
      */
-    public String readInput(int mode, int maxValue)
+    public String readInput(int mode, long maxValue)
     {
         return keyboard.readInput(mode, maxValue);
     }

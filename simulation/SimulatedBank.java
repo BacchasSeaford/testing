@@ -54,6 +54,9 @@ public class SimulatedBank
             case Message.INQUIRY:
             
                 return inquiry(message, balances);
+            case Message.Topup:
+            
+                return topup(message, balances);
         }
         
         // Need to keep compiler happy
@@ -67,6 +70,30 @@ public class SimulatedBank
      *  @param balances (out) balances in account after withdrawal
      *  @return status code derived from current values
      */
+        private Status topup(Message message, Balances balances)
+    {
+        int cardNumber = message.getCard().getNumber();
+        
+        int accountNumber = ACCOUNT_NUMBER [ cardNumber ] [ message.getFromAccount() ];
+        if (accountNumber == 0)
+            return new Failure("Invalid account type");
+    
+        Money amount = message.getAmount();
+        if (! amount.lessEqual(AVAILABLE_BALANCE [ accountNumber ]))
+             return new Failure("Insufficient available balance");
+            
+        WITHDRAWALS_TODAY [ cardNumber ].add(amount);
+        BALANCE [ accountNumber ].subtract(amount);
+        AVAILABLE_BALANCE [ accountNumber ].subtract(amount);
+        
+        // Return updated balances
+        
+        balances.setBalances(BALANCE [ accountNumber ], 
+                             AVAILABLE_BALANCE [ accountNumber ]);
+        
+        return new Success();
+    } 
+    
     private Status withdrawal(Message message, Balances balances)
     {
         int cardNumber = message.getCard().getNumber();

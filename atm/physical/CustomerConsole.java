@@ -77,8 +77,7 @@ public class CustomerConsole
             Simulation.getInstance().display((i+1) + ") " + menu[i]);
 
         String input = 
-            Simulation.getInstance().readInput(Simulation.MENU_MODE, menu.length);
-            
+            Simulation.getInstance().readInput(Simulation.MENU_MODE, menu.length);   
         Simulation.getInstance().clearDisplay();
         
         if (input == null)
@@ -87,20 +86,20 @@ public class CustomerConsole
             return Integer.parseInt(input) - 1;
     }
     
-    public int readPhonenum(String prompt) throws Cancelled
+    public long readPhonenum(String prompt) throws Cancelled
     {
         Simulation.getInstance().clearDisplay();
         Simulation.getInstance().display(prompt);
         Simulation.getInstance().display("");
         
-        String input = Simulation.getInstance().readInput(Simulation.phone,999999999);
+        String input = Simulation.getInstance().readInput(Simulation.phone,phoneNum);
         
         Simulation.getInstance().clearDisplay();
         
         if (input == null)
             throw new Cancelled();
         else
-            return Integer.parseInt(input);
+            return Long.parseLong(input);
         
         }
     
@@ -142,5 +141,5 @@ public class CustomerConsole
             super("Cancelled by customer");
         }
     }
-    private double phoneNum; 
+    private long phoneNum; 
 }

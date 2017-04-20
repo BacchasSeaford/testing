@@ -43,7 +43,7 @@ public class Inquiry extends Transaction
             "Account to inquire from",
             AccountInformation.ACCOUNT_NAMES);
         return new Message(Message.INQUIRY, 
-                        card, pin, serialNumber, from, -1, new Money(0));
+                        card, pin, serialNumber, from, -1, new Money(0), phoneNum);
     }
     
     /** Complete an approved transaction
@@ -65,5 +65,6 @@ public class Inquiry extends Transaction
     /** Account to inquire about
      */
     private int from;
+    private long phoneNum;
     
 }
