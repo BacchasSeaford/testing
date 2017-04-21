@@ -31,17 +31,6 @@ public class Topup extends Transaction
     protected Message getSpecificsFromCustomer() throws CustomerConsole.Cancelled
     {
         from = 1;
-
-        String [] amountOptions = { "1", "2", "5", "10", "15" };
-        Money [] amountValues = { 
-                                  new Money(135), new Money(235), new Money(535),
-                                  new Money(1035), new Money(1535)
-                                };
-        String amountMessage = "";
-        String [] credit ={""};
-        amount = amountValues [ 
-                atm.getCustomerConsole().readMenuChoice(
-                    amountMessage + "Enter number of credit \nCredit cost equal number * 100 + 35 \nAll top up is paid for by savings account", amountOptions) ];
         int i = 0;
         String x = "9999999999";
         while (i != 6){
@@ -60,8 +49,26 @@ public class Topup extends Transaction
             }
             else{
             i = 6;}} }
+        String [] amountOptions = { "1", "2", "5", "10", "15" };
+        Money [] amountValues = { 
+                                  new Money(135), new Money(235), new Money(535),
+                                  new Money(1035), new Money(1535)
+                                };
+        String amountMessage = "";
+        String [] credit ={""};
+        amount = amountValues [ 
+                atm.getCustomerConsole().readMenuChoice(
+                    amountMessage + "Enter number of credit \nCredit cost equal number * 100 + 35 \nAll top up is paid for by savings account", amountOptions) ];
+ 
+        String [] confirmOption = { "Confirm","Select cancel button" };
+        int [] Values = { 
+                                  1,2
+                                };
+          to = Values [ 
+                atm.getCustomerConsole().readMenuChoice(
+                     "Hit 1 or 2 number to confirm \nor \ncancel button to cancel", confirmOption) ];
+ 
         
-      //  Simulation.getInstance().display("Please enter your Phone number\n");
         return new Message(Message.Topup, card, pin, serialNumber, from, 5, amount, phoneNum);
 
     }
