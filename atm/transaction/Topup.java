@@ -9,8 +9,6 @@ import banking.Message;
 import banking.Money;
 import banking.Receipt;
 import simulation.*;
-import java.awt.*;
-import java.awt.event.*;
 
 /**
  * Mobile Topup credit
@@ -23,53 +21,18 @@ public class Topup extends Transaction
     /**
      * Constructor for objects of class Topup
      */
-    public Topup(ATM atm, Session session, Card card, int pin)
+     public Topup(ATM atm, Session session, Card card, int pin)
     {
         super(atm, session, card, pin);
     }
     
-    protected Message getSpecificsFromCustomer() throws CustomerConsole.Cancelled
-    {
-        from = 1;
-        int i = 0;
-        String x = "9999999999";
-        while (i != 6){
-            if (i == 0){
-            if (phoneNum <1000000000 || phoneNum > Long.parseLong(x)){
-                phoneNum = atm.getCustomerConsole().readPhonenum(
-                    "Please enter the phone number");
-                i = 66; 
-            }
-         }
-            else {            
-                if (phoneNum <1000000000 || phoneNum > Long.parseLong(x)){
-                phoneNum = atm.getCustomerConsole().readPhonenum(
-                    "Phone number Invalid \nPlease enter a valid phone number");
-                i = 66; 
-            }
-            else{
-            i = 6;}} }
-        String [] amountOptions = { "1", "2", "5", "10", "15" };
-        Money [] amountValues = { 
-                                  new Money(135), new Money(235), new Money(535),
-                                  new Money(1035), new Money(1535)
-                                };
-        String amountMessage = "";
-        String [] credit ={""};
-        amount = amountValues [ 
-                atm.getCustomerConsole().readMenuChoice(
-                    amountMessage + "Enter number of credit \nCredit cost equal number * 100 + 35 \nAll top up is paid for by savings account", amountOptions) ];
- 
-        String [] confirmOption = { "Confirm","Select cancel button" };
-        int [] Values = { 
-                                  1,2
-                                };
-          to = Values [ 
-                atm.getCustomerConsole().readMenuChoice(
-                     "Hit 1 or 2 number to confirm \nor \ncancel button to cancel", confirmOption) ];
- 
-        
-        return new Message(Message.Topup, card, pin, serialNumber, from, 5, amount, phoneNum);
+   protected Message getSpecificsFromCustomer() throws CustomerConsole.Cancelled
+    {       
+       
+        long phone = phone();
+        Money money = money();
+        to = confirm();
+        return new Message(Message.Topup, card, pin, serialNumber, from, to, money, phone);
 
     }
         protected Receipt completeTransaction()
@@ -84,7 +47,54 @@ public class Topup extends Transaction
             }
         };
     }
-   
+        
+        // Function to get phone number
+        public long phone() throws CustomerConsole.Cancelled {
+        from = 1;
+        int i = 0;
+        String x = "9999999999";
+        while (i != 6){
+            if (i == 0){
+            if (phoneNum <1000000000 || phoneNum > Long.parseLong(x)){
+                phoneNum = atm.getCustomerConsole().readPhonenum ("Please enter the phone number");
+                i = 66; 
+            }
+         }
+            else {            
+                if (phoneNum <1000000000 || phoneNum > Long.parseLong(x)){
+                phoneNum = atm.getCustomerConsole().readPhonenum( "Phone number Invalid \nPlease enter a valid phone number");
+                i = 66; 
+            }
+            else{
+            i = 6;}} } 
+        return phoneNum;
+        }
+        
+        // Function to money
+         public Money money() throws CustomerConsole.Cancelled{
+        String [] amountOptions = { "1", "2", "5", "10", "15" };
+        Money [] amountValues = { 
+                                  new Money(135), new Money(235), new Money(535),
+                                  new Money(1035), new Money(1535)
+                                };
+        String amountMessage = "";
+        amount = amountValues [ 
+                atm.getCustomerConsole().readMenuChoice(
+                amountMessage + "Enter number of credit \nCredit cost equal number * 100 + 35 \nAll top up is paid for by savings account", amountOptions) ];
+         return amount;
+}
+         
+         // Function to receive confirmation from customer 
+        public int confirm() throws CustomerConsole.Cancelled { 
+                String [] confirmOption = { "Confirm","Select cancel button" };
+        int [] Values = { 
+                                  1,2
+                                };
+          to = Values [ 
+               atm.getCustomerConsole().readMenuChoice(
+                     "Hit 1 or 2 number to confirm \nor \ncancel button to cancel", confirmOption) ];
+          return to;
+}
       /** Accounts to charge
      */
     private int from;
